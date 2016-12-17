@@ -1,0 +1,66 @@
+$primary-text: rgba(0,0,0,0.7);
+$primary-text-hover: rgba(0,0,0,1);
+$bg-header: #E91E63;
+
+@mixin scale($by){
+  transform: scale($by);
+  -webkit-transform: scale($by);
+  -ms-transform: scale($by);
+  -o-transform: scale($by);
+  -moz-transform: scale($by);
+}
+
+body{
+  box-sizing: border-box;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+a{
+  text-decoration: none;
+}
+
+#header{
+  background-color: $bg-header;
+  padding: 0.5rem;
+  font-size: 0.75rem;
+  text-align: right;
+}
+
+#calendar{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem 5rem;
+
+  .day{
+    position: relative;
+    flex-grow: 1;
+    flex-basis: 13%;
+    font-size: 4rem;
+    color: $primary-text;
+    align-content: center;
+    text-align: center;
+    padding: 0.5rem 0;
+    transition: all 0.1s ease;
+
+    &:hover{
+      @include scale(1.02);
+      color: $primary-text-hover;
+
+    }
+    &:nth-child(1){
+      background-image: url("../img/day1-drums.png");
+      background-size: cover;
+    }
+
+    & .project-title{
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      font-size: 0.9rem;
+    }
+  }
+}
