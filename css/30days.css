@@ -38,9 +38,14 @@ a {
     #calendar .day:nth-child(1) {
       background-image: url("../img/day1-drums.png");
       background-size: cover; }
+    #calendar .day:nth-child(2) {
+      background-image: url("../img/day2-clock.png");
+      background-size: cover; }
     #calendar .day .project-title {
       position: absolute;
       width: 100%;
       bottom: 0;
       left: 0;
-      font-size: 0.9rem; }
+      font-size: 0.9rem;
+      font-weight: bold;
+      background-color: rgba(255, 255, 255, 0.5); }
