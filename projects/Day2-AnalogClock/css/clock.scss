@@ -1,7 +1,73 @@
+$clock-face: #E91E63;
+$hand-color: #2980b9;
+
+@mixin rotate($deg){
+  transform: rotate($deg); 
+  -webkit-transform: rotate($deg); 
+  -moz-transform: rotate($deg); 
+  -ms-transform: rotate($deg);
+  -o-transform: rotate($deg);
+}
+
+@mixin hand-drop-shadow(){
+  -webkit-box-shadow: 0px 10px 30px 0px rgba(50, 50, 50, 0.67);
+  -moz-box-shadow:    0px 10px 30px 0px rgba(50, 50, 50, 0.67);
+  box-shadow:         0px 10px 30px 0px rgba(50, 50, 50, 0.67);
+}
+
 *{
-  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 body{
-  
+  background-image: url('../img/sky_texture1998.jpg');
 }
+
+#clock-main{
+  display: flex;
+  height: 90vh;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#clock-face{
+  position: relative;
+  border: 30px solid $clock-face;
+  border-radius: 50%;
+  width: 400px;
+  height: 400px;
+  @include hand-drop-shadow;
+  background-image: url("../img/grumpy.png");
+  background-size: cover;
+
+  .hand{
+    position: absolute;
+    top: 49%;
+    left: 5%;
+    width: 45%;
+    height: 6px;
+    background-color: $hand-color;
+    @include rotate(90);
+    transform-origin: 100%;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    @include hand-drop-shadow;
+    transition: 0.1s cubic-bezier(0.38, 3.88, 0.4, 0.18);
+  }
+
+  .hour-hand{
+    width: 35%;
+    left: 15%;
+  }
+
+  .minute-hand{
+    height: 10px;
+  }
+
+  .second-hand{
+    height: 3px;
+  }
+}
+
