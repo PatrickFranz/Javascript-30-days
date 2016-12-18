@@ -1,0 +1,46 @@
+:root{
+  --bg-color: #2196F3;
+  --hl: #FFC107;
+  --spacing: 10px;
+  --blur: 10px;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body{
+  background: url('../img/bg-pattern.png');
+}
+
+#main{
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: lighter;
+}
+
+#controls{
+  margin: 2rem auto;
+  font-size: 2rem;
+}
+
+#image{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: var(--bg-color);
+}
+
+#image > img{
+  padding: var(--spacing);
+  filter: blur(var(--blur));
+}
+
+.hl{
+  color: var(--hl);
+}
