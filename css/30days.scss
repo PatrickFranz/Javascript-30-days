@@ -48,8 +48,18 @@ a{
     &:hover{
       @include scale(1.02);
       color: $primary-text-hover;
-
     }
+
+    & .project-title{ 
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      font-size: 0.9rem;
+      font-weight: bold;
+      background-color: rgba(255,255,255,0.5);
+    }
+
     &:nth-child(1){
       background-image: url("../img/day1-drums.png");
       background-size: cover;
@@ -60,14 +70,10 @@ a{
       background-size: cover;
     }
 
-    &.project-title{
-      position: absolute;
-      width: 100%;
-      bottom: 0;
-      left: 0;
-      font-size: 0.9rem;
-      font-weight: bold;
-      background-color: rgba(255,255,255,0.5);
+    &:nth-child(3){
+      background-image: url('../img/day3-variables.png');
+      background-size: contain; 
     }
+
   }
 }
