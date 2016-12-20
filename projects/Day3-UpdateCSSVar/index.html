@@ -11,15 +11,24 @@
     <span>Update CSS Variables using <span class='hl'>Javascript</span></span>
 
     <div id="controls">
-      <label for="spacing">Spacing</label>
-      <input type="range" name="spacing" min="10" max="200" value="10">
+      <div>
+      <label for="size">Sizing</label>
+      <input type="range" name="size" min="10" max="100" value="80" data-sizing="%">
+      <p class='value' id='current-size'>80%</p>
+      </div>
+      <div>
       <label for="blur">Blur</label>
-      <input type="range" name="blue" min="0" max="25" value="10">
+      <input type="range" name="blur" min="0" max="25" value="10" data-sizing="px">
+      <p class='value' id='current-blur'>10px</p>
+      </div>
+      <div>
       <label for="color-pick">Color</label>
-      <input type="color" name="color-pick" value="#2196F3">
+      <input type="color" name="bg-color" value="#f321cc">
+      <p class='value' id='current-color'>#f321cc</p>
+      </div>
     </div>
     <div id="image">
-      <img src="img/lighthouse.png" alt="">
+      <img src="img/lighthouse.png" alt="A lighthouse" height='300px' >
 
     </div>
 

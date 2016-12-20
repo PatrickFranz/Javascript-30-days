@@ -1,7 +1,7 @@
 :root{
-  --bg-color: #2196F3;
+  --bg-color: #f321cc;
   --hl: #FFC107;
-  --spacing: 10px;
+  --size: 80%;
   --blur: 10px;
 }
 
@@ -24,23 +24,31 @@ body{
 }
 
 #controls{
+  display: flex;
+  justify-content: space-between;
   margin: 2rem auto;
   font-size: 2rem;
 }
 
 #image{
   display: flex;
+  min-height: 500px;
   align-content: center;
   justify-content: center;
-  padding: 20px;
   background-color: var(--bg-color);
 }
 
 #image > img{
-  padding: var(--spacing);
+  height: var(--size);
+  width: var(--size);
   filter: blur(var(--blur));
+  padding: 10px;
 }
 
 .hl{
   color: var(--hl);
+}
+
+.value{
+  font-size: 1rem;
 }
