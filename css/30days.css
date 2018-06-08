@@ -27,7 +27,8 @@ a {
     align-content: center;
     text-align: center;
     padding: 0.5rem 0;
-    transition: all 0.1s ease; }
+    transition: all 0.1s ease;
+    background-repeat: no-repeat; }
     #calendar .day:hover {
       transform: scale(1.02);
       -webkit-transform: scale(1.02);
@@ -52,3 +53,6 @@ a {
     #calendar .day:nth-child(3) {
       background-image: url("../img/day3-variables.png");
       background-size: contain; }
+    #calendar .day:nth-child(4) {
+      background-image: url("../img/day4-arrays.jpg");
+      background-size: cover; }

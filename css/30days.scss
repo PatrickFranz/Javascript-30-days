@@ -1,5 +1,7 @@
 $primary-text: rgba(0,0,0,0.7);
 $primary-text-hover: rgba(0,0,0,1);
+$primary-text-light: rgba(255,255,255,0.7);
+$primary-text-light-hover: rgba(255,255,255,1);
 $bg-header: #E91E63;
 
 @mixin scale($by){
@@ -44,6 +46,7 @@ a{
     text-align: center;
     padding: 0.5rem 0;
     transition: all 0.1s ease;
+    background-repeat: no-repeat;
 
     &:hover{
       @include scale(1.02);
@@ -73,6 +76,12 @@ a{
     &:nth-child(3){
       background-image: url('../img/day3-variables.png');
       background-size: contain; 
+    }
+   
+    &:nth-child(4){
+      background-image: url('../img/day4-arrays.jpg');
+      
+      background-size: cover; 
     }
 
   }
