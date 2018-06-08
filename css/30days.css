@@ -56,3 +56,6 @@ a {
     #calendar .day:nth-child(4) {
       background-image: url("../img/day4-arrays.jpg");
       background-size: cover; }
+    #calendar .day:nth-child(5) {
+      background-image: url("../img/day5-flexgallery.png");
+      background-size: cover; }
