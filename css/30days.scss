@@ -86,6 +86,10 @@ a{
       background-image: url('../img/day5-flexgallery.png');
       background-size: cover; 
     }
+    &:nth-child(6){
+      background-image: url('../img/day6-type-ahead.jpg');
+      background-size: cover; 
+    }
 
   }
 }
