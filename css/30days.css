@@ -62,3 +62,6 @@ a {
     #calendar .day:nth-child(6) {
       background-image: url("../img/day6-type-ahead.jpg");
       background-size: cover; }
+    #calendar .day:nth-child(7) {
+      background-image: url("../img/day7-workout.jpg");
+      background-size: cover; }
