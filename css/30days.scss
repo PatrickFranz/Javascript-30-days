@@ -94,6 +94,10 @@ a{
       background-image: url('../img/day7-workout.jpg');
       background-size: cover; 
     }
+    &:nth-child(8){
+      background-image: url('../img/Day8-Canvas.jpg');
+      background-size: cover; 
+    }
 
   }
 }
