@@ -28,7 +28,8 @@ a {
     text-align: center;
     padding: 0.5rem 0;
     transition: all 0.1s ease;
-    background-repeat: no-repeat; }
+    background-repeat: no-repeat;
+    margin: 2px; }
     #calendar .day:hover {
       transform: scale(1.02);
       -webkit-transform: scale(1.02);
@@ -52,9 +53,9 @@ a {
       background-size: cover; }
     #calendar .day:nth-child(3) {
       background-image: url("../img/day3-variables.png");
-      background-size: contain; }
+      background-size: cover; }
     #calendar .day:nth-child(4) {
-      background-image: url("../img/day4-arrays.jpg");
+      background-image: url("../img/rosie.jpeg");
       background-size: cover; }
     #calendar .day:nth-child(5) {
       background-image: url("../img/day5-flexgallery.png");
@@ -67,4 +68,10 @@ a {
       background-size: cover; }
     #calendar .day:nth-child(8) {
       background-image: url("../img/Day8-Canvas.jpg");
+      background-size: cover; }
+    #calendar .day:nth-child(9) {
+      background-image: url("../img/day9-consolelog.png");
+      background-size: cover; }
+    #calendar .day:nth-child(10) {
+      background-image: url("../img/Day10-Octopus.jpg");
       background-size: cover; }

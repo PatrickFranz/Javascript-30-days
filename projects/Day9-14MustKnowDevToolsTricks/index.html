@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Console Tricks!</title>
+</head>
+<body>
+  <style>
+    body{
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url('./cloudy-day.png');
+      --black: #171B1E;
+      --white: #E5E5E5;
+    }
+    header{
+      width: 80%;
+      margin: 0 auto;
+      font-size: 1.2em;
+      padding: 10px;
+    }
+
+    header .tip{
+      font-style: italic;
+    }
+    .exercises{
+      display: flex;
+      flex-direction: column;
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    .exercises .exercise-item{
+      background: rgba(255,255,255, 0.8);
+      border: 1px solid var(--black);
+      border-radius: 5px;
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+    }
+
+    .exercise-item .desc{
+      font-style: italic;
+    }
+
+    .exercise-item .tab{
+      display: inline-block;
+      padding: 5px 10px;
+      margin-bottom: -5px;
+      border-radius: 3px;
+      border-top: 2px solid  var(--black);
+      border-right: 2px solid var(--black);
+      border-left: 2px solid var(--black);
+
+    }
+
+    .input-block{
+      margin: 5px 0;
+    }
+
+    .console{
+      background: var(--black);
+      border-radius: 3px;
+      color: var(--white);
+      margin: 2px 0;
+      padding: 5px 5px 55px;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    .console .console-style{
+      font-size: 1.5em;
+      background: blue; 
+      color: var(--white);
+    }
+
+    .console img{
+      width: 1em;
+    }
+
+    .console table{
+      width: 100%;
+    }
+    .console table, th, td{
+      border: 1px solid var(--white);
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .console th{
+      background: lightslategray;
+      color: var(--black);
+
+    }
+  </style>
+
+  <header>
+    <h1>Console Dev Tricks</h1>
+    <p>Here are 13 <code>console</code> tricks to throw in your er'y day dev kit.</p>
+    <p class="tip">Tip: Copy and Paste the input into your own Dev Tools Console &lt;F12></p>
+  </header>
+  <div class="exercises">
+
+    <div class="exercise-item">
+      <h2>Regular <code>console.log()</code></h2>
+      <p class="desc">Using plain old console.log() with a simple supplied string.</p>
+      <div class="input-block">
+        <p class='tab'>Command</p> 
+        <div class="console">
+          console.log('hello');
+        </div>
+      </div>
+      <div class="output-block">
+        <p class="tab">Outputs</p>
+        <div class="console">
+          hello
+        </div>
+      </div>
+    </div>
+    
+    <div class="exercise-item">
+      <h2>Interpolated <code>console.log()</code></h2>
+      <p class="desc">Supplying a variable to the console.log() to use in place of the placeholder.</p>
+      <div class="input-block">
+        <p class='tab'>Command</p> 
+        <div class="console">
+          console.log('Hello there %s!', 'Steve');
+        </div>
+      </div>
+      <div class="output-block">
+        <p class='tab'>Output</p> 
+        <div class="console">
+          Hello there Steve!
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="exercise-item">
+      <h2>Styling console output using <code>%c</code></h2>
+      <p class="desc">We can also style the output we send to the console. Anything that follows the <code>%c</code> will be styled according to the styles provided in the second parameter.</p>
+      <div class="input-block">
+        <p class='tab'>Command</p> 
+        <div class="console">
+          <span>console.log('Apply now and %cget your dream job!', 'font-size: 1.5em; background: blue; color: white');</span>
+        </div>
+      </div>
+      <div class="output-block">
+        <p class='tab'>Output</p> 
+        <div class="console">
+          <span>Apply now and <span class='console-style'>get your dream job!<span></span> 
+        </div>
+      </div>
+    </div>
+    
+    <div class="exercise-item">
+      <h2>Warnings using <code>console.warn()</code></h2>
+      <p class="desc">We can issue a warning to the console as well. It gives a nice icon and an expanding arrow with information about where the warning was called.</p>
+      <div class="input-block">
+        <p class='tab'>Command</p> 
+        <div class="console">
+          <span>console.warn('Careful now!');</span>
+        </div>
+      </div>
+      <div class="output-block">
+        <p class='tab'>Output</p> 
+        <div class="console">
+          <img src="warning-icon.png" alt="Warning Icon"> <img src="more-arrow.png" alt="Expand hierarchy arrow">  
+          <span>Careful now!</span> 
+        </div>
+      </div>
+    </div>
+    
+    <div class="exercise-item">
+      <h2>Errors using <code>console.error()</code></h2>
+      <p class="desc">We can also send errors to the console. Just like <code>console.warn()</code> this provides an appropriate icon and addition information.</p>
+      <div class="input-block">
+        <p class='tab'>Command</p> 
+        <div class="console">
+          <span>console.error('Well, now you've gone and done it!!);</span>
+        </div>
+      </div>
+      <div class="output-block">
+        <p class='tab'>Output</p> 
+        <div class="console">
+            <img src="error-icon.png" alt="Warning Icon"> <img src="more-arrow.png" alt="Expand hierarchy arrow">  
+          <span>Well, now you've gone and done it!!</span> 
+        </div>
+      </div>
+    </div>
+   
+    <div class="exercise-item">
+      <h2>Logging info using <code>console.info()</code></h2>
+      <p class="desc">Sometimes we just want to let our console viewer know something. This is a great reason to use <code>console.info()</code>. There really isn't much of a difference between <code>info</code> and <code>log</code> beyond the symantics, and an info icon.</p>
+      <div class="input-block">
+        <p class='tab'>Command</p> 
+        <div class="console">
+          <span>console.info('Now, here is something interesting!);</span>
+        </div>
+      </div>
+      <div class="output-block">
+        <p class='tab'>Output</p> 
+        <div class="console">
+          <span><img src="info-icon.png" alt="Info icon"> Now, here is something interesting!</span> 
+        </div>
+      </div>
+    </div>
+  
+    <div class="exercise-item">
+      <h2>Clearing the console using <code>console.clear()</code></h2>
+      <p class="desc">If you're looking to hide all those errors and warnings, <code>console.clear()</code> is your ticket! It takes no parameters, and will (attempt to) clear the console window, however, most browsers have a "preserve log" setting, that overrides this. Better to deal with the errors and warnings. ;)</p>
+      <div class="input-block">
+        <p class='tab'>Command</p> 
+        <div class="console">
+          <span>console.clear();</span>
+        </div>
+      </div>
+      <div class="output-block">
+        <p class='tab'>Output</p> 
+        <div class="console">
+          <span style='color: rgb(134, 119, 119); font-style: italic;'>Console was cleared</span> 
+        </div>
+      </div>
+    </div>
+    
+    <div class="exercise-item">
+      <h2>Testing with the console using <code>console.assert()</code></h2>
+      <p class="desc">You can use <code>console.assert()</code> to run a quick test. This method takes 2 parameters; the test case, and what to display if the test fails. In our example below, the first test has failed, and we see our 'failed' message. The second assert passes and we get nothing (except 'undefined'). </p>
+      <div class="input-block">
+        <p class='tab'>Command</p> 
+        <div class="console">
+          <span class='select-me yup'></span>
+          <span>let assertElement = document.querySelector('.select-me');
+            <br/>console.assert(assertElement.classList.contains('nope'), 'Sorry, that failed.');</span>
+            <br/>console.assert(assertElement.classList.contains('yup'), 'Sorry, that failed.');</span>
+          </div>
+      </div>
+      <div class="output-block">
+        <p class='tab'>Output</p> 
+        <div class="console">
+          <span>
+            <img src="error-icon.png" alt="Warning Icon"> <img src="more-arrow.png" alt="Expand hierarchy arrow">         Assertion failed: Sorry, that failed.
+            <br/>undefined
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="exercise-item">
+      <h2>Viewing DOM elements with <code>console.dir()</code></h2>
+      <p class="desc">We can view any DOM element we have a reference to using <code>console.log(element)</code> and it shows us the element. Sometimes however, we need the properties of the element. That's where <code>console.dir(element)</code> comes in. Our first line of output comes from <code>console.log(showMe)</code> and is the actual DOM element. The second bunch of output is from <code>console.dir(showMe). As you can see it give us a nice list of the node's properties.</code></p>
+      <div class="input-block">
+        <p class='tab'>Command</p> 
+        <div class="console">
+          <span class='select-me yup'></span>
+          <span>let showMe = document.querySelector('.select-me');
+            <br/>console.log(showMe);</span>
+            <br/>console.dir(showMe);</span>
+          </div>
+      </div>
+      <div class="output-block">
+        <p class='tab'>Output</p> 
+        <div class="console">
+          <span>
+              &lt;span class='select-me yup'>&lt;/span>
+              <br><br>
+              <img src="more-arrow-expanded.png" alt="Expanded arrow"> span.select-me.yup
+              <br>&nbsp;&nbsp;&nbsp;&nbsp;accessKey : ""
+              <br>&nbsp;&nbsp;&nbsp;&nbsp;assignedSlot : null
+              <br>&nbsp;&nbsp;<img src="more-arrow.png" alt="Expandable arrow"> attributeStyleMap : StylePropertyMap {size: 0}
+              <br>&nbsp;&nbsp;&nbsp;&nbsp;...
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="exercise-item">
+      <h2>Grouping output with <code>console.group()</code> and <code>console.groupEnd()</code></h2>
+      <p class="desc">When we have a bunch of related output on the console, we are able to group it together using <code>console.group()</code>. The group is opened and given a name. You can close that group by calling <code>console.groupEnd()</code> and supplying the same name. <strong>Tip:</strong> If you want to keep your console clean (and of course you do), use <code>console.groupCollapsed()</code> instead. </p>
+      <div class="input-block">
+        <p class='tab'>Command</p> 
+        <div class="console">
+          <span class='select-me yup'></span>
+          <span>const groupDogs = [{ name: 'Salty', age: 2 }, { name: 'Molly', age: 14 }];<br>
+            <br/>groupDogs.forEach(dog => {<br>
+            &nbsp;&nbsp; console.group(`${dog.name}`);<br>
+            &nbsp;&nbsp;&nbsp; console.log(dog);<br>
+            &nbsp;&nbsp;&nbsp; console.log(`Age in dog years: ${dog.age * 7}`);<br>
+            &nbsp;&nbsp; console.groupEnd(`${dog.name}`);<br>
+            });</span>
+          </div>
+      </div>
+      <div class="output-block">
+        <p class='tab'>Output</p> 
+        <div class="console">
+          <span>
+              <img src="more-arrow-expanded.png" alt="Expanded arrow"><strong>Salty</strong>
+              <br>&nbsp;&nbsp;&nbsp;&nbsp;<img src="more-arrow.png" alt="Expandable arrow">{name: "Salty", age: 2}
+              <br>&nbsp;&nbsp;&nbsp;&nbsp;Age in dog years: 14
+              <br><img src="more-arrow-expanded.png" alt="Expanded arrow"><strong>Molly</strong>
+              <br>&nbsp;&nbsp;&nbsp;&nbsp;<img src="more-arrow.png" alt="Expandable arrow">{name: "Molly", age: 14}
+              <br>&nbsp;&nbsp;&nbsp;&nbsp;Age in dog years: 98
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="exercise-item">
+      <h2>Counting number of logs with <code>console.count()</code> and <code>console.countEnd().</code>.</h2>
+      <p class="desc">This method will count the number of times a specified output has been logged to the console. </p>
+      <div class="input-block">
+        <p class='tab'>Command</p> 
+        <div class="console">
+          <span class='select-me yup'></span>
+          <span>
+            console.count('Salty');<br>
+            console.count('Salty');<br>
+            console.count('Salty');<br>
+            console.count('Salty');<br>
+            console.count('Molly');<br>
+            console.count('Molly');<br>
+            console.count('Salty');<br>
+            console.count('Salty');<br>
+          </span>
+        </div>
+      </div>
+      <div class="output-block">
+        <p class='tab'>Output</p> 
+        <div class="console">
+          <span>
+            <span>Salty: 1</span><br>
+            <span>Salty: 2</span><br>
+            <span>Salty: 3</span><br>
+            <span>Salty: 4</span><br>
+            <span>Molly: 1</span><br>
+            <span>Molly: 2</span><br>
+            <span>Salty: 5</span><br>
+            <span>Salty: 6</span><br>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <h2>Timing with <code>console.time()</code> and <code>console.timeEnd().</code>.</h2>
+      <p class="desc">This method allows you to start and stop a timer (or number of timers) using a string in the parameter list as a reference. Using the same string you used to start the timer, you can call <code>console.timeEnd(str)</code> to stop the timer. It will then log the results to the console.</p>
+      <div class="input-block">
+        <p class='tab'>Command</p> 
+        <div class="console">
+          <span class='select-me yup'></span>
+          <span>
+            console.time('fetchdata');<br>
+            fetch('https:api.github.com/users/patrickfranz')<br>
+                &nbsp;&nbsp;&nbsp;.then(resp => resp.json()) <br>
+                &nbsp;&nbsp;&nbsp;.then(data => { <br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.timeEnd('fetchdata') <br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;}); <br>
+
+          </span>
+        </div>
+      </div>
+      <div class="output-block">
+        <p class='tab'>Output</p> 
+        <div class="console">
+          <span>
+            fetchdata: 564.93603515625ms
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="exercise-item">
+      <h2>Display data in a table using <code>console.table()</code></h2>
+      <p class="desc">If you have an iterable collection such as an Array, it often easier to see what is going on with it when it's formatted in a table.</p>
+      <div class="input-block">
+        <p class='tab'>Command</p> 
+        <div class="console">
+          <span class='select-me yup'></span>
+          <span>
+            const doglist = [{ name: 'Salty', age: 2 }, { name: 'Molly', age: 14 }];<br>
+            console.table(doglist);
+          </span>
+        </div>
+      </div>
+      <div class="output-block">
+        <p class='tab'>Output</p> 
+        <div class="console">
+          <span>
+            <table>
+              <th>(index)</th>
+              <th>name</th>
+              <th>age</th>
+              <tr>
+                <td>0</td>
+                <td>Salty</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>Molly</td>
+                <td>14</td>
+              </tr>
+            </table>
+          </span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script>
+  </script>
+</body>
+</html>
