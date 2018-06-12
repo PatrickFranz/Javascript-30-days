@@ -107,6 +107,10 @@ a{
       background-image: url('../img/Day10-Octopus.jpg');
       background-size: cover; 
     }
+    &:nth-child(11){
+      background-image: url('../img/day11-xray.jpg');
+      background-size: cover; 
+    }
 
   }
 }
