@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script type='text/javascript' src='http://www.cornify.com/js/cornify.js'></script>
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    body > p { display: none;}
+    div {opacity: 0.5;}
+    a {
+      text-decoration: dashed underline;
+      font-size: 1rem;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+    .main{
+      margin: 50px auto;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 1.2em;
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      text-align: center;
+    }
+    .hint-popup{
+      display: none;
+    }
+
+    .hint:hover + .hint-popup{
+      display: block;
+    }
+
+    .text{
+      z-index: 100;
+    }
+    .code-correct{
+      display: none;
+    }
+    
+    .biggify{
+      margin: 20px 0;
+      font-size: 2rem;
+    }
+
+    code{
+      color: pink;
+    }
+
+  </style>
+  <section class="main">
+    <section>
+      <img src="grumpyGrif.jpg" alt="One grumpy pup">  
+    </section>
+    <span class='text'>This grumpy boi needs some cheering up!! <a class='hint'>Hint</a><span class='hint-popup'>I wonder if a <code>unicorn</code> might help!</span></span>
+    <p class="code-correct biggify text">GOT IT! Isn't that MUCH BETTER!! Add as many as you like!!</p>
+    <p class="code-correct text ">TIP: clicking on <code>unicorns</code> and <code>rainbows</code> creates more!</p>
+
+  </section>
+
+
+
+  <script>
+    const keyIn = [];
+    const konami = 'unicorn';
+    window.addEventListener('keyup', e => {
+      keyIn.push(e.key);
+      keyIn.splice(-konami.length -1, keyIn.length - konami.length);
+      if(keyIn.join('').includes(konami)){
+        cornify_add();
+        document.querySelectorAll('.code-correct').forEach( el => 
+          el.style.display = 'block'
+        )
+    }
+      
+    })
+  </script>
+</body>
+</html>

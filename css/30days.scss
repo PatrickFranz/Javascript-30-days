@@ -48,6 +48,8 @@ a{
     transition: all 0.1s ease;
     background-repeat: no-repeat;
     margin: 2px;
+    background-size: cover;
+    
 
     &:hover{
       @include scale(1.02);
@@ -66,50 +68,42 @@ a{
 
     &:nth-child(1){
       background-image: url("../img/day1-drums.png");
-      background-size: cover;
     }
 
     &:nth-child(2){
       background-image: url('../img/day2-clock.png');
-      background-size: cover;
     }
 
     &:nth-child(3){
       background-image: url('../img/day3-variables.png');
-      background-size: cover; 
     }
    
     &:nth-child(4){
       background-image: url('../img/rosie.jpeg');
-      background-size: cover; 
     }
     &:nth-child(5){
       background-image: url('../img/day5-flexgallery.png');
-      background-size: cover; 
     }
     &:nth-child(6){
       background-image: url('../img/day6-type-ahead.jpg');
-      background-size: cover; 
     }
     &:nth-child(7){
       background-image: url('../img/day7-workout.jpg');
-      background-size: cover; 
     }
     &:nth-child(8){
       background-image: url('../img/Day8-Canvas.jpg');
-      background-size: cover; 
     }
     &:nth-child(9){
       background-image: url('../img/day9-consolelog.png');
-      background-size: cover; 
     }
     &:nth-child(10){
       background-image: url('../img/Day10-Octopus.jpg');
-      background-size: cover; 
     }
     &:nth-child(11){
       background-image: url('../img/day11-xray.jpg');
-      background-size: cover; 
+    }
+    &:nth-child(12){
+      background-image: url('../img/Day12-KonamiCode.jpg');
     }
 
   }
