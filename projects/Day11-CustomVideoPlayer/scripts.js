@@ -72,7 +72,7 @@ player.addEventListener('click', togglePlay);
 player.addEventListener('timeupdate', scrubberProgress);
 progress.addEventListener('click', seekTo);
 progress.addEventListener('mousedown', e => isMousedown = true);
-progress.addEventListener('mouseup', e => isMousedown = false);
+player.addEventListener('mouseup', e => isMousedown = false);
 progress.addEventListener('mousemove', e => isMousedown && seekTo(e));
 player.addEventListener('play', updateButton)
 player.addEventListener('pause', updateButton)
