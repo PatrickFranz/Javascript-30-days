@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel='stylesheet' href='../../css/30days.css'/>
+  <title>JS Reference VS Copy</title>
+</head>
+<body>
+  <style>
+    body{
+      font-size: 1em;
+      background-image: url('square_bg.png');
+    }  
+  </style>
+  <div class="exercises">
+    <h2>Javascript Reference vs Copying</h2>
+    <p class='desc'>This is part of Wes Bos's <a href="https://javascript30.com/">Javascript 30 course.</a> Most of the writing and examples are his and used as he used them. Some of them have modified to make it clearer for me.</p>
+    
+    <div class="exercise-item">
+      <h2>Copying Javascript strings, numbers and booleans</h2>
+      <div class="input-block">
+        <p class="tab">JavaScript</p>
+        <div class="console">
+          let age = 100; <br>
+          let age2 = age; <br>
+          console.log(age, age2);<br>
+        </div>
+      </div>
+      <div class="input-block">
+        <p class="tab">Console</p>
+        <div class="console">
+          100 100
+        </div>
+      </div>
+      <p class='desc'>Now, if we modify <code>age</code>...</p>
+      <div class="input-block">
+        <p class="tab">JavaScript</p>
+        <div class="console">
+          age = 200; <br>
+          console.log(age, age2); <br>
+        </div>
+      </div>
+
+      <div class="input-block">
+        <p class="tab">Console</p>
+        <div class="console">
+          200 100
+        </div>
+      </div>
+      <p class="desc">We see that modifing <code>age</code> has <strong>NO EFFECT</strong> on <code>age2</code></p>
+      <p class="desc">This is true with <code>boolean</code> and <code>strings</code> as well.</p>
+    </div>
+
+
+    <div class="exercise-item">
+      <h2>Copying Javascript Arrays</h2>
+      <h3>The Problem</h3>
+      <p class=desc>Copying Array's are a little more tricky. Let's start with an array.</p>
+      <div class="input-block">
+        <p class="tab">JavaScript</p>
+        <div class="console">
+          // Let's say we have an array <br>
+          const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];<br>
+          <br>
+          // and we want to make a copy of it. <br>
+          const team = players; <br>
+          <br>
+          console.log(players, team); <br>
+        </div>
+      </div>
+      <div class="input-block">
+        <p class="tab">Console</p>
+        <div class="console">
+          (4) ["Wes", "Sarah", "Ryan", "Poppy"] (4) ["Wes", "Sarah", "Ryan", "Poppy"] <br>
+        </div>
+      </div>
+      
+      <p class='desc'>Now, if we want to modify <code>team[3]</code>m it should be as simple as...</p>
+      
+      <div class="input-block">
+        <p class="tab">JavaScript</p>
+        <div class="console">
+          team[3] = 'Lux'; <br>
+          console.log(players, team); <br>
+        </div>
+      </div>
+
+      <div class="input-block">
+        <p class="tab">Console</p>
+        <div class="console">
+            (4) ["Wes", "Sarah", "Ryan", "Lux"] (4) ["Wes", "Sarah", "Ryan", "Lux"] <br>
+        </div>
+      </div>
+      <p class="desc">When we modified <code>team[3]</code>, it also changed <code>player[3]</code>. This is because <code>team</code> and <code>player</code> variables both referenced the same array. This is known as a 'reference copy'.</p>
+      
+      <h3>The Solution(s)</h3>
+      <p>Using different methods to <strong>clone</strong> an array allows you to create two seperate arrays.</p>
+      <div class="input-block">
+        <p class="tab">JavaScript</p>
+        <div class="console">
+          //Using Array.slice() <br>
+          const team2 = players.slice(); <br>
+          team2[3] = 'Lux'; <br> <br>
+
+          // Using Array.concat() <br>
+          const team3 = [].concat(players); <br>
+          team3[3] = 'Bill'; <br> <br>
+          
+          //Using the spread operator <br>
+          const team4 = [...players]; <br>
+          team4[3] = 'Ted'; <br> <br>
+
+          //Using Array.from() method <br>
+          const team5 = Array.from(players); <br>
+          team5[3] = "Sergie"; <br> <br>
+
+          console.log(players, team2); <br>
+          console.log(players, team3); <br>
+          console.log(players, team4); <br>
+          console.log(players, team5); <br>
+        </div>
+      </div>
+      <div class="input-block">
+        <p class="tab">Console</p>
+        <div class="console">
+            (4) ["Wes", "Sarah", "Ryan", "John"] (4) ["Wes", "Sarah", "Ryan", "Lux"] <br>
+            (4) ["Wes", "Sarah", "Ryan", "John"] (4) ["Wes", "Sarah", "Ryan", "Bill"] <br>
+            (4) ["Wes", "Sarah", "Ryan", "John"] (4) ["Wes", "Sarah", "Ryan", "Ted"] <br>
+            (4) ["Wes", "Sarah", "Ryan", "John"] (4) ["Wes", "Sarah", "Ryan", "Sergie"] <br>
+        </div>
+      </div>
+      <p class="desc">As you can see changing one array, doesn't affect the array it was copied from.</p>
+    </div>
+
+    <div class="exercise-item">
+      <h2>Copying JavaScript Objects</h2>
+      <div class="input-block">
+        <p class="tab">JavaScript</p>
+        <div class="console">
+          // The same thing goes for objects, let's say we have a person object <br>
+          <br>
+          const person = {<br>
+            name: 'Wes Bos',<br>
+            age: 80<br>
+          };<br>
+          <br><br>
+          // and <strong>think</strong> we make a copy:<br><br>
+          const captain = person;<br>
+          captain.number = 99;<br><br>
+          console.log(person);<br>
+          console.log(captain);<br>
+          <br>
+        </div>
+      </div>
+      <div class="input-block">
+        <p class="tab">Console</p>
+        <div class="console">
+          > {name: "Wes Bos", age: 80, number: 99} <br>
+          > {name: "Wes Bos", age: 80, number: 99}
+        </div>
+      </div>
+      <p class="desc">We can see that the same thing is happening with <code>Objects</code> that happened with <code>Arrays</code>. They both reference the same object, so a change to one, changes both.</p>
+      <div class="input-block">
+        <p class="tab">JavaScript</p>
+        <div class="console">
+          // how do we take a copy instead? <br>
+          // By using the Object.assign() method.<br><br>
+          const person = {<br>
+            name: 'Wes Bos',<br>
+            age: 80<br>
+          };<br><br>
+          const cap2 = Object.assign({}, person);<br>
+          cap2.age = 18;<br><br>
+          console.log(person);<br>
+          console.log(cap2);<br>
+
+        </div>
+      </div>
+      <div class="input-block">
+        <p class="tab">Console</p>
+        <div class="console">
+            {name: "Wes Bos", age: 80} <br>
+            {name: "Wes Bos", age: 18}
+        </div>
+      </div>
+      <p class="desc">Things to note - this is <strong> only 1 level deep - both for Arrays and Objects</strong>. We should soon see the ES6 Spread Operator for objects as well<code>{...person}</code>. But it is not available at time of this writing.
+    </div>
+</div>
+</body>
+</html>

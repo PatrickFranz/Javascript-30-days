@@ -68,9 +68,9 @@
         const isNotScrolledPast = window.scrollY < imageBottom;
         if(isHalfShown && isNotScrolledPast){
           image.classList.add('active')
+          console.log('Slide image in... debounce set to 10');
         } else {
           image.classList.remove('active')
-
         }
       });
     }

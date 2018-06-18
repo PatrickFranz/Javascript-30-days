@@ -3,6 +3,8 @@ $primary-text-hover: rgba(0,0,0,1);
 $primary-text-light: rgba(255,255,255,0.7);
 $primary-text-light-hover: rgba(255,255,255,1);
 $bg-header: #E91E63;
+$black: #171B1E;
+$white: #E5E5E5;
 
 @mixin scale($by){
   transform: scale($by);
@@ -18,7 +20,9 @@ body{
   font-size: 10px;
   padding: 0;
   margin: 0;
+
 }
+
 
 a{
   text-decoration: none;
@@ -29,6 +33,76 @@ a{
   padding: 0.5rem;
   font-size: 0.75rem;
   text-align: right;
+}
+
+.exercises{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1em;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+
+
+ .exercise-item{
+    background: rgba(255,255,255, 0.8);
+    border: 1px solid $primary-text;
+    border-radius: 5px;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+
+    .desc{
+      font-style: italic;
+    }
+
+    .tab{
+      display: inline-block;
+      padding: 5px 10px;
+      margin-bottom: -5px;
+      border-radius: 3px;
+      border-top: 2px solid  $black;
+      border-right: 2px solid $black;
+      border-left: 2px solid $black;
+    }
+  }
+}
+.input-block{
+  margin: 5px 0;
+}
+
+.console{
+  background: $black;
+  border-radius: 3px;
+  color: $white;
+  margin: 2px 0;
+  padding: 5px 5px 55px;
+  font-family: 'Courier New', Courier, monospace;
+  
+  .console-style{
+    font-size: 1.5em;
+    background: blue; 
+    color: $white;
+  }
+
+  img{
+    width: 1em;
+  }
+
+  table{
+    width: 100%;
+  }
+  
+  table, th, td{
+    border: 1px solid $white;
+    border-collapse: collapse;
+    text-align: left;
+  }
+
+  th{
+    background: lightslategray;
+    color: $black;
+  }
 }
 
 #calendar{
@@ -48,12 +122,12 @@ a{
     transition: all 0.1s ease;
     background-repeat: no-repeat;
     margin: 2px;
-    background-size: cover;
+    background-size: cover; 
     
 
     &:hover{
       @include scale(1.02);
-      color: $primary-text-hover;
+      color: $primary-text-light;
     }
 
     & .project-title{ 
@@ -108,6 +182,9 @@ a{
     &:nth-child(13){
       background-image: url('../img/Day13-SlideIn.jpg');
     }
-    
+    &:nth-child(14){
+      background-image: url('../img/Day14-Clones.webp');
+    }
+
   }
 }

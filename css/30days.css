@@ -14,6 +14,57 @@ a {
   font-size: 0.75rem;
   text-align: right; }
 
+.exercises {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1em;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto; }
+  .exercises .exercise-item {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0; }
+    .exercises .exercise-item .desc {
+      font-style: italic; }
+    .exercises .exercise-item .tab {
+      display: inline-block;
+      padding: 5px 10px;
+      margin-bottom: -5px;
+      border-radius: 3px;
+      border-top: 2px solid #171B1E;
+      border-right: 2px solid #171B1E;
+      border-left: 2px solid #171B1E; }
+
+.input-block {
+  margin: 5px 0; }
+
+.console {
+  background: #171B1E;
+  border-radius: 3px;
+  color: #E5E5E5;
+  margin: 2px 0;
+  padding: 5px 5px 55px;
+  font-family: 'Courier New', Courier, monospace; }
+  .console .console-style {
+    font-size: 1.5em;
+    background: blue;
+    color: #E5E5E5; }
+  .console img {
+    width: 1em; }
+  .console table {
+    width: 100%; }
+  .console table, .console th, .console td {
+    border: 1px solid #E5E5E5;
+    border-collapse: collapse;
+    text-align: left; }
+  .console th {
+    background: lightslategray;
+    color: #171B1E; }
+
 #calendar {
   display: flex;
   flex-wrap: wrap;
@@ -37,7 +88,7 @@ a {
       -ms-transform: scale(1.02);
       -o-transform: scale(1.02);
       -moz-transform: scale(1.02);
-      color: black; }
+      color: rgba(255, 255, 255, 0.7); }
     #calendar .day .project-title {
       position: absolute;
       width: 100%;
@@ -72,3 +123,5 @@ a {
       background-image: url("../img/Day12-KonamiCode.jpg"); }
     #calendar .day:nth-child(13) {
       background-image: url("../img/Day13-SlideIn.jpg"); }
+    #calendar .day:nth-child(14) {
+      background-image: url("../img/Day14-Clones.webp"); }
