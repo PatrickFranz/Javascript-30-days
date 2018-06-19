@@ -125,3 +125,5 @@ a {
       background-image: url("../img/Day13-SlideIn.jpg"); }
     #calendar .day:nth-child(14) {
       background-image: url("../img/Day14-Clones.webp"); }
+    #calendar .day:nth-child(15) {
+      background-image: url("../img/Day15-Storage.jpg"); }
