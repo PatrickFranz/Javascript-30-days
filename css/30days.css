@@ -1,3 +1,7 @@
+/*
+  QUICK SASS CLI
+  >  sass ./css/*.scss ./css/*
+*/
 body {
   box-sizing: border-box;
   font-family: 'Space Mono', monospace;
@@ -127,3 +131,11 @@ a {
       background-image: url("../img/Day14-Clones.webp"); }
     #calendar .day:nth-child(15) {
       background-image: url("../img/Day15-Storage.jpg"); }
+    #calendar .day:nth-child(16) {
+      background-image: url("../img/Day16-Shadow.jpg"); }
+    #calendar .day:nth-child(17) {
+      background-image: url("../img/Day17-Band.jpg"); }
+    #calendar .day:nth-child(18) {
+      background-image: url("../img/Day18-video.png"); }
+
+/*# sourceMappingURL=30days.css.map */

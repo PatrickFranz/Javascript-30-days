@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css?family=Seymour+One" rel="stylesheet">
+  <title>Mouse Shadow</title>
+</head>
+<body>
+
+  <div class="hero">
+    <h1 contenteditable>LET IT SNOW!</h1>
+  </div>
+
+
+  <style>
+  html {
+    color:black;
+    font-family: sans-serif;
+    overflow: hidden;
+  }
+  body{
+    margin: 0;
+    padding: 0;
+
+  }
+
+  .hero {
+    min-height: 100vh;
+    display:flex;
+    justify-content: start;
+    align-items: baseline;
+    background-image: url(arnaud-jaegers-84506-unsplash.jpg);
+    background-size: cover;
+  }
+
+  h1 {
+    position: absolute;
+    top: 100px;
+    text-shadow: 10px 10px 0 rgba(255,255,255,0.8);
+    font-family: "Seymour One";
+    font-size: 100px;
+    transform: rotate3d(1,1,1,-20deg);
+    user-select: none;
+
+  }
+  </style>
+
+<script>
+  const hero = document.querySelector('.hero');
+  const content = document.querySelector('h1');
+  document.addEventListener('mousemove', shadow);
+  
+  function shadow(e){
+    const walk = 100;
+    const colorWalk = 255;
+    const {offsetWidth: width, offsetHeight: height} = hero;
+    let { offsetX : x, offsetY : y} = e;
+    if(this !== e.target){
+      x = x + e.target.offsetLeft;
+      y = y + e.target.offsetTop;
+    }
+    const xWalk = Math.round((x / width * walk) - (walk / 2));
+    const yWalk = Math.round((y / height * walk) - (walk / 2));
+    let r=0, g=0, b=0;
+    r += x / width * colorWalk;
+    g += y / width * -1 * colorWalk;
+    b += y / width * colorWalk;
+
+    content.style.textShadow = `${xWalk}px ${yWalk}px 0 rgba(${r},255,255,0.5)`;
+    
+    console.log(r)
+  }
+  
+
+</script>
+</body>
+</html>
